@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Security;
 
@@ -197,6 +198,30 @@ namespace SuperSimpleTcp
         #endregion
 
         #region Public-Methods
+
+        /// <summary>
+        /// Convert a SimpleTcpClientSettings object to a string.
+        /// </summary>
+        /// <returns>SimpleTcpClientSettings as a string</returns>
+        public override string ToString()
+        {
+            StringWriter details = new StringWriter();
+            details.NewLine = Environment.NewLine;
+            details.WriteLine("--- Client Settings ---");
+            details.WriteLine("  {0,-35}: {1}", "NoDelay", NoDelay);
+            details.WriteLine("  {0,-35}: {1}", "LocalEndpoint", LocalEndpoint?.ToString());
+            details.WriteLine("  {0,-35}: {1}", "StreamBufferSize", StreamBufferSize);
+            details.WriteLine("  {0,-35}: {1}", "ConnectTimeoutMs", ConnectTimeoutMs);
+            details.WriteLine("  {0,-35}: {1}", "ReadTimeoutMs", ReadTimeoutMs);
+            details.WriteLine("  {0,-35}: {1}", "IdleServerTimeoutMs", IdleServerTimeoutMs);
+            details.WriteLine("  {0,-35}: {1}", "IdleServerEvaluationIntervalMs", IdleServerEvaluationIntervalMs);
+            details.WriteLine("  {0,-35}: {1}", "ConnectionLostEvaluationIntervalMs", ConnectionLostEvaluationIntervalMs);
+            details.WriteLine("  {0,-35}: {1}", "AcceptInvalidCertificates", AcceptInvalidCertificates);
+            details.WriteLine("  {0,-35}: {1}", "MutuallyAuthenticate", MutuallyAuthenticate);
+            details.WriteLine("  {0,-35}: {1}", "UseAsyncDataReceivedEvents", UseAsyncDataReceivedEvents);
+            details.WriteLine("  {0,-35}: {1}", "CheckCertificateRevocation", CheckCertificateRevocation);
+            return details.ToString();
+        }
 
         #endregion
 

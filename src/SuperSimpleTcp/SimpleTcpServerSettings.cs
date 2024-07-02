@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Security;
 
 namespace SuperSimpleTcp
@@ -182,6 +183,29 @@ namespace SuperSimpleTcp
         #endregion
 
         #region Public-Methods
+        /// <summary>
+        /// Convert a SimpleTcpServerSettings object to a string.
+        /// </summary>
+        /// <returns>SimpleTcpServerSettings as a string</returns>
+        public override string ToString()
+        {
+            StringWriter details = new StringWriter();
+            details.NewLine = Environment.NewLine;
+            details.WriteLine("--- Server Settings ---");
+            details.WriteLine("  {0,-35}: {1}", "NoDelay", NoDelay);
+            details.WriteLine("  {0,-35}: {1}", "StreamBufferSize", StreamBufferSize);
+            details.WriteLine("  {0,-35}: {1}", "MaxConnections", MaxConnections);
+            details.WriteLine("  {0,-35}: {1}", "IdleClientTimeoutMs", IdleClientTimeoutMs);
+            details.WriteLine("  {0,-35}: {1}", "IdleClientEvaluationIntervalMs", IdleClientEvaluationIntervalMs);
+            details.WriteLine("  {0,-35}: {1}", "AcceptInvalidCertificates", AcceptInvalidCertificates);
+            details.WriteLine("  {0,-35}: {1}", "MutuallyAuthenticate", MutuallyAuthenticate);
+            details.WriteLine("  {0,-35}: {1}", "UseAsyncDataReceivedEvents", UseAsyncDataReceivedEvents);
+            details.WriteLine("  {0,-35}: {1}", "CheckCertificateRevocation", CheckCertificateRevocation);
+            details.WriteLine("  {0,-35}: {1}", "CertificateValidationCallback", CertificateValidationCallback?.ToString());
+            details.WriteLine("  {0,-35}: {1}", "PermittedIPs", string.Join(", ", PermittedIPs));
+            details.WriteLine("  {0,-35}: {1}", "BlockedIPs", string.Join(", ", BlockedIPs));
+            return details.ToString();
+        }
 
         #endregion
 

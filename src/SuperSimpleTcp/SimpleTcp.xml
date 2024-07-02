@@ -429,6 +429,12 @@
             Instantiate the object.
             </summary>
         </member>
+        <member name="M:SuperSimpleTcp.SimpleTcpClientSettings.ToString">
+            <summary>
+            Convert a SimpleTcpClientSettings object to a string.
+            </summary>
+            <returns>SimpleTcpClientSettings as a string</returns>
+        </member>
         <member name="T:SuperSimpleTcp.SimpleTcpKeepaliveSettings">
             <summary>
             SimpleTcp keepalive settings.
@@ -764,6 +770,12 @@
             <summary>
             Instantiate the object.
             </summary>
+        </member>
+        <member name="M:SuperSimpleTcp.SimpleTcpServerSettings.ToString">
+            <summary>
+            Convert a SimpleTcpServerSettings object to a string.
+            </summary>
+            <returns>SimpleTcpServerSettings as a string</returns>
         </member>
         <member name="T:SuperSimpleTcp.SimpleTcpStatistics">
             <summary>
