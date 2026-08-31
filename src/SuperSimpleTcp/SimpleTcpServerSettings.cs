@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Security;
-
-namespace SuperSimpleTcp
+﻿namespace SuperSimpleTcp
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Security;
+
     /// <summary>
     /// SimpleTcp server settings.
     /// </summary>
